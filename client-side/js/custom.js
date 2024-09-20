@@ -26,6 +26,9 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
         if(res.status == 201) {
             alert("success");
         }
+        else if(res.status==400){
+            alert("phone number already exists")
+        }
         else{
             alert("error");
         }
