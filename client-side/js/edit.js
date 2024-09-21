@@ -1,10 +1,9 @@
-
+const url = window.location.href;
+console.log(url);
+const urlParams = new URLSearchParams(url.split("?")[1]);
+console.log(urlParams);
+const id=urlParams.get("id");
 async function getDonor() {
-    const url = window.location.href;
-    console.log(url);
-    const urlParams = new URLSearchParams(url.split("?")[1]);
-    console.log(urlParams);
-    const id=urlParams.get("id");
     const res = await fetch(`http://localhost:3000/api//getdonor/${id}`)
     const donor=await res.json();
     console.log(donor);

@@ -25,6 +25,8 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
         console.log(res);
         if(res.status == 201) {
             alert("success");
+            window.location.href="../index.html"
+
         }
         else if(res.status==400){
             alert("phone number already exists")
@@ -32,6 +34,9 @@ document.getElementById("frm").addEventListener("submit",async(e)=>{
         else{
             alert("error");
         }
-    });
+    }).catch((error)=>{
+        console.log(error);
+        
+    })
 
 });

@@ -56,4 +56,17 @@ export async function editDonor(req,res) {
        }
         
 }
+export async function deleteDonor(req,res) {
+    try{
+        console.log(req.params);
+        const{_id}=req.params;
+        const data = await donorSchema.deleteOne({_id});
+        res.status(201).send(data);
+    }
+    catch(error){
+        res.status(400).send(error);
 
+    }
+      
+    
+}
