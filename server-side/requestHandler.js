@@ -27,3 +27,33 @@ export async function getDonors(req,res) {
         res.status(404).send({msg:error})
     }
 }
+
+export async function getDonor(req,res) {
+    try{
+        console.log(req.params);
+        const{id}=req.params;
+        console.log(id);
+        const data = await donorSchema.findOne({_id:id});
+        console.log(data);
+        res.status(200).send(data)
+    }
+    catch (error){
+        res.status(400).send(error);
+    }
+}
+export async function editDonor(req,res) {
+       try{
+        console.log(req.params);
+        console.log(req.body);
+        const{_id}=req.params;
+        const{...donor}=req.body;
+        const data = await donorSchema.updateOne({_id},{$set:{...donor}});
+        res.status(201).send(data);
+       }
+       catch(error){
+        res.status(400).send(error);
+
+       }
+        
+}
+

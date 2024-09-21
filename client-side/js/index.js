@@ -14,7 +14,7 @@ async function getDonors() {
                     <td>${donor.blood_group}ve</td>
                     <td>Eligibe</td>
                     <td class="actions">
-                        <a href="./pages/edit.html"><button>Edit</button></a>
+                        <a href="./pages/edit.html?id=${donor._id}"><button>Edit</button></a>
                         <button>Delete</button>
                     </td>
         </tr>
